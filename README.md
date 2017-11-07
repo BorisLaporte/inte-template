@@ -20,4 +20,6 @@ npm run prod
 ```
 
 ## notes
+
 The compiled project is stored in `build`
+Most of the configuration `variables` are in `main.configuration.js`
