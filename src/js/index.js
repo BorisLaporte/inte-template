@@ -7,7 +7,7 @@ import App from './App'
 
 // Import the style.scss here,
 // It will be linked to the html automaticly.
-import '../scss/style.scss'
+import 'SCSS/style.scss'
 
 // Start the App
 const app = new App()

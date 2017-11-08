@@ -33,6 +33,9 @@ module.exports = {
     alias: {
       'FONT': V.FONTS_FOLDER,
       'IMG': V.IMG_FOLDER,
+      'SCSS': V.DEV_SCSS_FOLDER,
+      'JS': V.DEV_JS_FOLDER,
+      'TPL': V.TPL_FOLDER,
       'modernizr': path.resolve(__dirname, ".modernizrrc"),
       // 'TweenLite': path.resolve(__dirname,'node_modules/gsap/src/uncompressed/TweenLite'),
       // 'ScrollToPlugin': path.resolve(__dirname,'node_modules/gsap/src/uncompressed/plugins/ScrollToPlugin.js'),
@@ -66,6 +69,12 @@ module.exports = {
         options: {
           presets: ['env']
         }
+      },
+      {
+        test: /\.handlebars$/,
+        loader: 'handlebars-loader',
+        exclude: /node_modules|bower_components/,
+        include: V.TPL_FOLDER
       },
       {
         test: /\.(eot|svg|ttf|otf|woff2?)$/,
