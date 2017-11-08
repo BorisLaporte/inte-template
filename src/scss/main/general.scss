@@ -1,8 +1,18 @@
+h1, h2, h3, h4, h5, h6{
+  font-family: 'Lora', serif;
+}
+
 h1{
   color: $black-text;
 }
 
 p{
-  color: red;
+  color: $red;
   font-family: sans-serif;
+}
+
+#app{
+  background-color: $red;
+  color: white;
+  padding: 10px 40px;
 }

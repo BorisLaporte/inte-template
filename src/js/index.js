@@ -10,4 +10,7 @@ import App from './App'
 import 'SCSS/style.scss'
 
 // Start the App
-const app = new App()
+const app = new App(
+  /** object with variables for configuration **/
+  {container: document.getElementById('app')}
+)
