@@ -2,6 +2,11 @@
 
 Tiny template in webpack to quicly develop tiny projects
 
+## depedencies
+
+- [Nodejs]: https://nodejs.org/en/
+- [NPM]: https://www.npmjs.com/
+
 ## Install
 
 ```
