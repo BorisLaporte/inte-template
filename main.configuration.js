@@ -21,7 +21,7 @@ V.FONTS_FOLDER = path.resolve(V.ASSET_FOLDER, 'font');
 V.IMG_FOLDER = path.resolve(V.ASSET_FOLDER, 'img');
 
 // folder for the handlebars template within the project
-V.TPL_FOLDER = path.resolve(V.DEV_FOLDER,'template');
+V.TPL_FOLDER = path.resolve(V.DEV_FOLDER,'partials');
 
 // folder for javascript files non compiled
 V.DEV_JS_FOLDER = path.resolve(V.DEV_FOLDER, 'js');

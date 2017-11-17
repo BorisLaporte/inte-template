@@ -1,11 +1,11 @@
-# Inte Template
+# Front boilerplate
 
-Tiny template in webpack to quicly develop tiny projects
+Front end boilerplate with twig templates
 
 ## depedencies
 
-- [Nodejs]: https://nodejs.org/en/
-- [NPM]: https://www.npmjs.com/
+- [Nodejs](https://nodejs.org/en/)
+- [NPM](https://www.npmjs.com/)
 
 ## Install
 

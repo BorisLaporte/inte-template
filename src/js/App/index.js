@@ -1,7 +1,6 @@
-// Import the libraries and templates here
-import appTemplate from 'TPL/app.handlebars'
+// we import the library we need
+import $ from 'jquery'
 
-// Code in oriented object, you'll thank me later
 class App{
 
   // the function that run at the instantiation
@@ -11,19 +10,8 @@ class App{
 
     // Just somthing fun
     console.warn("Still didn't look at index.js huh ?")
+    console.log($('#id'), "jquery works !")
 
-    // instantiate the app's html
-    this.initHtml();
-  }
-
-  // Render the main template
-  initHtml () {
-    this.container.innerHTML = appTemplate(
-      // pass variables
-      {
-        some_text: "Hello world 🤖"
-      }
-    )
   }
 }
 

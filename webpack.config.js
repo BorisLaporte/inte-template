@@ -20,7 +20,7 @@ module.exports = {
     // name of the js files,
     // keep the folder name,
     // because for the css we use a plugin and the css is in another folder
-    filename:  '[name].js',
+    filename:  '[name].[hash:6].js',
     // the path for the server to know where to look for the ressources or assets
     publicPath: '/'
 
@@ -51,10 +51,9 @@ module.exports = {
       jQuery: 'jquery'
     }),
     new HtmlWebpackPlugin({
-      template: './src/index.html'
+      filename: 'index.html',
+      template: './src/index.handlebars'
     }),
-    // create a seperate css file
-    new ExtractTextPlugin('main.css'),
   ],
 
   module: {
@@ -71,10 +70,20 @@ module.exports = {
         }
       },
       {
-        test: /\.handlebars$/,
+        test: /\.handlebars$|.hbs$/,
         loader: 'handlebars-loader',
-        exclude: /node_modules|bower_components/,
-        include: V.TPL_FOLDER
+        include: V.DEV_FOLDER,
+        query: {
+          partialDirs: [
+              V.TPL_FOLDER
+          ],
+          context: {
+            data: {
+              test: "Ici les variables"
+            }
+          }
+        },
+        exclude: /node_modules|bower_components/
       },
       {
         test: /\.(eot|svg|ttf|otf|woff2?)$/,
@@ -93,6 +102,10 @@ module.exports = {
       {
         test: /\.modernizrrc(\.json)?$/,
         use: [ 'modernizr-loader', 'json-loader' ]
+      },
+      {
+        test: /\.json$/,
+        use: [ 'json-loader' ]
       }
     ]
   }

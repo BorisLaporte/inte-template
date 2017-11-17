@@ -4,7 +4,7 @@
 // require our dependencies
 const webpack = require('webpack')
 const path = require('path')
-const ExtractTextPlugin = require("extract-text-webpack-plugin")
+// const ExtractTextPlugin = require("extract-text-webpack-plugin")
 
 const V = require('./main.configuration.js')
 const webpackConfig = require('./webpack.config.js')
@@ -51,31 +51,31 @@ webpackConfigDevelopment.plugins = webpackConfigDevelopment.plugins.concat([
 webpackConfigDevelopment.module.loaders = webpackConfigDevelopment.module.loaders.concat([
 	{
 		test: /\.(css|scss)$/,
-  	use: ['css-hot-loader'].concat(ExtractTextPlugin.extract({
-      fallback: 'style-loader',
-      use: [
-        {
-          loader: 'css-loader',
-          options: {
-              minimize: false,
-              sourceMap: true
-          }
-        },
-        {
-					loader: 'postcss-loader',
-          options: {
-              sourceMap: true
-          }
-        },
-        {
-          loader: 'sass-loader',
-          options: {
-						// the paths for scss ressources and depedencies
-						includePaths: [V.DEV_SCSS_FOLDER, pathNormalize],
-						sourceMap: true
-          }
-        }]
-    }))
+    use: [
+      {
+        loader: 'style-loader'
+      },
+      {
+        loader: 'css-loader',
+        options: {
+            minimize: false,
+            sourceMap: true
+        }
+      },
+      {
+				loader: 'postcss-loader',
+        options: {
+            sourceMap: true
+        }
+      },
+      {
+        loader: 'sass-loader',
+        options: {
+					// the paths for scss ressources and depedencies
+					includePaths: [V.DEV_SCSS_FOLDER, pathNormalize],
+					sourceMap: true
+        }
+      }]
 	},
 ])
 

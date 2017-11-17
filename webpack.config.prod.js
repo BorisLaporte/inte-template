@@ -23,6 +23,9 @@ webpackConfigProduction.plugins = webpackConfigProduction.plugins.concat([
         comments: false
       }
     }),
+    // create a seperate css file
+    new ExtractTextPlugin('styles.[hash:6].css'),
+
     new webpack.optimize.OccurrenceOrderPlugin(),
     // define NODE_ENV to production,
     // some library have different versions between development and production
